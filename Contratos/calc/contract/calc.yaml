@@ -1,0 +1,105 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Calculadora
+host: 'localhost:8080'
+basePath: /calc
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /add:
+    get:
+      summary: Operacion de suma
+      operationId: add
+      tags:
+        - calc
+      parameters:
+        - name: num1
+          in: query
+          description: primer numero
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          description: segundo numero
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/resultado'
+        default:
+          description: unexpected error
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/Error'
+  /sub:
+    delete:
+      summary: Operacion de resta
+      operationId: sub
+      tags:
+        - calc
+      parameters:
+        - in: body
+          name: resta
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/resta'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/resultado'
+        default:
+          description: unexpected error
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/Error'
+  /mul:
+    post:
+      summary: Operacion de multiplicacion
+      operationId: mul
+      tags:
+        - calc
+      parameters:
+        - in: body
+          name: resta
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/mult'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/resultado'
+        default:
+          description: unexpected error
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/Error'
+  /div:
+    put:
+      summary: Operacion de división
+      operationId: div
+      tags:
+        - calc
+      parameters:
+        - name: num1
+          in: query
+          description: primer numero
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          description: segundo numero
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/resultado'
+        default:
+          description: unexpected error
+          schema:
+            $ref: 'http://localhost/calc/schema/schema.json#/Error'

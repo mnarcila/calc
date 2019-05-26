@@ -1,0 +1,12 @@
+ {
+    "mult": {
+      "properties": {
+        "num1": {
+          "type": "integer" 
+          },
+        "num2": {
+          "type": "integer" 
+        }
+      }
+    }
+  }

@@ -1,0 +1,82 @@
+#%RAML 1.0
+title: calculadora
+baseUri: http://localhost/
+types: # Definicion de tipos
+  resultado: !include http://localhost/calc/schema/resultado.json
+  Error: !include http://localhost/calc/schema/Error.json
+  resta: !include http://localhost/calc/schema/resta.json
+  mult: !include http://localhost/calc/schema/mult.json
+       
+/calc:
+  /add:
+    get:
+      queryParameters: 
+        num1:
+          type: number 
+          description: primer numero
+          required: true
+          example: 1
+        num2:
+            type: number 
+            description: segundo numero
+            required: true
+            example: 1
+      responses:
+        200:
+          body:
+            application/json:
+              type: resultado # reference to global type definition
+        400:
+          body:
+            application/json:
+              type: Error # reference to global type definition
+  /sub:
+    delete:
+      body: 
+        application/json:
+          schema: resta 
+      responses:
+        200:
+          body:
+            application/json:
+              type: resultado # reference to global type definition
+        400:
+          body:
+            application/json:
+              type: Error # reference to global type definition   
+  /mul:
+      post:
+        body: 
+          application/json:
+            schema: mult 
+        responses:
+          200:
+            body:
+              application/json:
+                type: resultado # reference to global type definition
+          400:
+            body:
+              application/json:
+                type: Error # reference to global type definition                        
+  /div:
+    put:
+      queryParameters: 
+        num1:
+          type: number 
+          description: primer numero
+          required: true
+          example: 1
+        num2:
+            type: number 
+            description: segundo numero
+            required: true
+            example: 1
+      responses:
+        200:
+          body:
+            application/json:
+              type: resultado # reference to global type definition
+        400:
+          body:
+            application/json:
+              type: Error # reference to global type definition

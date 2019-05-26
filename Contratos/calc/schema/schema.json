@@ -1,0 +1,45 @@
+ {
+    "resultado": {
+      "properties": {
+        "result": {
+          "type": "integer" 
+          }
+      }
+    },
+    
+    "resta": {
+      "properties": {
+        "num1": {
+          "type": "integer" 
+          },
+        "num2": {
+          "type": "integer" 
+        }
+      }
+    },
+    "mult": {
+      "properties": {
+        "num1": {
+          "type": "integer" 
+          },
+        "num2": {
+          "type": "integer" 
+        }
+      }
+    },
+    
+    "Error": {
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer"
+          },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }

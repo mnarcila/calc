@@ -1,0 +1,9 @@
+ {
+    "resultado": {
+      "properties": {
+        "result": {
+          "type": "integer" 
+          }
+      }
+    }
+  }
