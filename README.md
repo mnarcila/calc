@@ -6,9 +6,11 @@ En las carpetas se encontraran las fuentes y los archivos de ejecución de postm
 # Como utilizar:
 
 1. Para obtener la imagen desde dockerhub se debe ejecutar desde la consola el siguiente comando:
+
 docker pull mnarcla/dkcalcv1
 
 2. Ejecutar la imagen del docker:
+
 docker run -it -p 8888:8080 mnarcla/dkcalcv1
 
 3. Para validar la información del servicios que se acaba de desplegar puede utilizar la documentación del contrato: 
